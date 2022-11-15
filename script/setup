@@ -4,6 +4,11 @@
 # Stop on errors
 set -e
 
+npm config set registry https://repo.huaweicloud.com/repository/npm/
+npm cache clean -f
+
+npm config set disturl https://repo.huaweicloud.com/nodejs
+
 cd "$(dirname "$0")/.."
 
 # Add default vscode settings if not existing
