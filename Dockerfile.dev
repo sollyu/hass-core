@@ -11,6 +11,8 @@ RUN pipx uninstall pycodestyle
 RUN pipx uninstall mypy
 RUN pipx uninstall pylint
 
+RUN sed -i 's#http://deb.debian.org#https://mirrors.163.com#g' /etc/apt/sources.list
+
 RUN \
     curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - \
     && apt-get update \
